@@ -2,7 +2,11 @@ const { v4: uuidv4 } = require("uuid");
 
 let students = [];
 
-const getStudents = (req, res) => res.json(students);
+const getStudents = (req, res) => {
+    res.setHeader("Content-Type", "application/json");
+    res.json(students); 
+};
+
 
 const addStudent = (req, res) => {
     const { name, course } = req.body;

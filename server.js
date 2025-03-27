@@ -8,6 +8,8 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 
+app.set("json spaces", 4);
+
 app.use("/api/students", studentRoutes);
 
 const PORT = process.env.PORT || 5000;
